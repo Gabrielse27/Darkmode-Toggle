@@ -1,0 +1,150 @@
+:root{
+    --clr-primary: #4F5955;
+    --clr-secondary: #daa004;
+    --clr-accent: #a16031;
+
+    --clr-bg: #c9c9c9;
+    --clr-hero-bg: #ebb289ef;
+    --form-br: .4em;
+}     
+
+
+*,*::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+
+}
+
+ 
+
+html {
+ color-scheme: light;
+}
+
+.dark {
+   color-scheme: dark;
+
+   --clr-primary:  hsl(159, 18%, 75%);
+    --clr-secondary:  hsl(37, 67%, 40%);
+    --clr-accent:  hsl(23, 53%, 59%);
+
+    --clr-bg:  #333;
+    --clr-hero-bg:  hsl(34, 40%, 30%);
+
+}
+
+
+
+
+body{
+
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--clr-bg)
+}
+.btn{
+    font-size: 1rem;
+    padding: .5em 3em;
+    border: 0;
+    background-color: transparent;
+    border-radius: .4em;
+    font-weight: 600;
+    cursor: pointer;
+
+
+}
+.btn-primary{
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+}
+nav {
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero {
+    height: 50svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--clr-hero-bg);
+
+    h2 {
+        font-size: 2rem;
+        color: var(--clr-primary);
+    }
+}
+.newsletter {
+    padding-block: 2rem;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.form-input{
+    padding: .5em;
+    font-size: 1rem;
+    border-radius: var(--form-br);
+    border: 1px solid var(--clr-primary);
+}
+
+.toogle{
+    --_w: 60px;
+    --_h: 30px;
+
+    width: var(--_w);
+    height: var(--_h);
+
+    position: relative;
+    display: inline-block;
+    flex-shrink: none;
+    position: relative;
+    display: inline-block;
+
+    input[type="checkbox"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #ccc;
+        border-radius: 100vw;
+        box-shadow: inset 0 0 3px #00000038;
+
+        transition: 400ms;
+    }
+    
+    .slider::before {
+        content: '';
+        position:absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        aspect-ratio: 1;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 4px #00000057;
+        
+        transition: 400ms;
+    }
+    input [ type="checkbox"]:checked + .slider::before {
+     left: calc(100% -var(--_h));
+     background-color: var(--clr-accent);
+    }
+    input [ type="checkbox"]:checked + .slider{
+        background-color: var(--clr-secondary);
+    }
+
+}
