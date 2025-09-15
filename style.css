@@ -93,7 +93,7 @@ nav {
     border: 1px solid var(--clr-primary);
 }
 
-.toogle{
+.toggle{
     --_w: 60px;
     --_h: 30px;
 
@@ -139,11 +139,11 @@ nav {
         
         transition: 400ms;
     }
-    input [ type="checkbox"]:checked + .slider::before {
-     left: calc(100% -var(--_h));
+    input[type="checkbox"]:checked + .slider::before {
+     left: calc(100% - var(--_h));
      background-color: var(--clr-accent);
     }
-    input [ type="checkbox"]:checked + .slider{
+    input[type="checkbox"]:checked + .slider{
         background-color: var(--clr-secondary);
     }
 
